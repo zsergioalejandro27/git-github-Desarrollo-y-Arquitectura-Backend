@@ -20,7 +20,7 @@ Route::get('/', function () {
 
         echo "***** ESTRUCTURAS DE CONTROL ***** <br><br>";
         echo "<br>";
-        $message = "Hola soy $name";
+        $message = "Hola soy $name, ";
         if($age >= 18) {
             $message .= "Eres mayor de edad";
         } else if ($age > 50) {
@@ -34,4 +34,25 @@ Route::get('/', function () {
 
         echo $message;
 
+        echo "<br>";
+        echo "***** FUNCIONES ***** <br><br>";
+
+        echo printUser($name,$age);
+
+        echo "<br>";
+        printUserWithCallBack($name, $age, callable: function(){
+            echo "Esta es una función callback, saludos!!! <br>";
+        });
 });
+
+function printUser(string $name, int $age){
+    return "El nombre del usuario es $name y su edad es $age años <br>";
+}
+
+
+function printUserWithCallBack(string $name, int $age, callable $callable){
+
+    echo "Soy $name y  tengo $age años <br>";
+    $callable();
+
+}
