@@ -156,7 +156,7 @@
     <div class="container">
         <h1 class="title">Contacto</h1>
         
-        <form action="#" method="post">
+        <form action="{{route('contacto.store')}}" method="get">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required>

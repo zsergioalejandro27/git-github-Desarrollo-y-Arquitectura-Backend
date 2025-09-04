@@ -4,7 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/contacto', function(){
     return view("formulario");
+
 });
+
+Route::get('/contacto/store', function(){
+    print_r($_GET);
+
+})->name('contacto.store');
 
 
 Route::get('/', function () {
