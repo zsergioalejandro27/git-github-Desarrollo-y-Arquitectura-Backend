@@ -17,4 +17,21 @@ Route::get('/', function () {
 
     echo "<br>";
     echo "Mi nombre es $name , tengo $age años y mido $height";
+
+        echo "***** ESTRUCTURAS DE CONTROL ***** <br><br>";
+        echo "<br>";
+        $message = "Hola soy $name";
+        if($age >= 18) {
+            $message .= "Eres mayor de edad";
+        } else if ($age > 50) {
+            $message .+ "Eres un adulto mayor";
+        }
+        else {
+            $message .= "Eres menor de edad";
+        }
+
+        $message .= " " .($isLogin? "Ya estas logeado" : "No estas logeado"). "<br>";
+
+        echo $message;
+
 });
